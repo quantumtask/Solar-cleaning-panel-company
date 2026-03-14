@@ -172,17 +172,17 @@
       <div class="panel-tour__sticky section">
         <div class="panel-tour__copy">
           <p class="eyebrow">Interactive 360 View</p>
-          <h2>Scroll through the card to rotate a solar panel from edge to edge.</h2>
+          <h2>Scroll through the card to rotate a Modular Hybrid Power Pod frame by frame.</h2>
           <p>
-            This viewer turns with page scroll, giving the section a more immersive sense of
-            depth while showing the glass face, frame, rear layer, and return angle in one smooth
-            pass.
+            Inspired by your reference motion, this sequence keeps the object centered, uses a
+            darker cinematic lighting setup, and reveals key pod details as the rotation moves
+            through the build.
           </p>
           <div class="panel-tour__legend">
-            <span>Front glass</span>
-            <span>Aluminum frame</span>
-            <span>Rear backing</span>
-            <span>Cable side</span>
+            <span>Battery stack</span>
+            <span>Hybrid core</span>
+            <span>Thermal spine</span>
+            <span>Rear ports</span>
           </div>
           <p class="panel-tour__hint">Keep scrolling to continue the full rotation.</p>
         </div>
@@ -194,20 +194,40 @@
               <strong class="panel-tour__meta-value" id="panel-angle">0 deg</strong>
             </div>
             <div>
-              <span class="panel-tour__meta-label">Current view</span>
-              <strong class="panel-tour__meta-value" id="panel-face-name">Front Glass</strong>
+              <span class="panel-tour__meta-label">Current reveal</span>
+              <strong class="panel-tour__meta-value" id="panel-face-name">Battery Stack</strong>
             </div>
           </div>
 
           <div class="panel-tour__viewport">
-            <div class="panel-tour__halo"></div>
-            <div class="panel-object" aria-hidden="true">
-              <div class="panel-face panel-face--front"></div>
-              <div class="panel-face panel-face--back"></div>
-              <div class="panel-face panel-face--left"></div>
-              <div class="panel-face panel-face--right"></div>
-              <div class="panel-face panel-face--top"></div>
-              <div class="panel-face panel-face--bottom"></div>
+            <div class="pod-sequence" id="pod-sequence">
+              <canvas
+                class="pod-canvas"
+                id="pod-canvas"
+                width="1280"
+                height="760"
+                aria-label="Scroll-driven Modular Hybrid Power Pod animation"
+              ></canvas>
+
+              <div class="pod-callout pod-callout--left is-visible" data-pod-copy="0">
+                <span class="pod-callout__eyebrow">Battery Stack</span>
+                <strong>Stackable power modules built for fast service swaps.</strong>
+              </div>
+
+              <div class="pod-callout pod-callout--right" data-pod-copy="1">
+                <span class="pod-callout__eyebrow">Hybrid Core</span>
+                <strong>Integrated inverter spine and controller bus at the centerline.</strong>
+              </div>
+
+              <div class="pod-callout pod-callout--lower" data-pod-copy="2">
+                <span class="pod-callout__eyebrow">Thermal Spine</span>
+                <strong>Directed airflow channel keeps the pod balanced under sustained load.</strong>
+              </div>
+
+              <div class="pod-callout pod-callout--center" data-pod-copy="3">
+                <span class="pod-callout__eyebrow">Rear Ports</span>
+                <strong>Rear service access routes cleanly for input, battery, and monitoring.</strong>
+              </div>
             </div>
           </div>
 
@@ -216,10 +236,10 @@
               <span class="panel-tour__progress-bar" id="panel-tour-progress"></span>
             </div>
             <div class="panel-tour__stages" aria-label="Panel view stages">
-              <span class="panel-tour__stage is-active">Front</span>
-              <span class="panel-tour__stage">Edge</span>
-              <span class="panel-tour__stage">Back</span>
-              <span class="panel-tour__stage">Return</span>
+              <span class="panel-tour__stage is-active">Stack</span>
+              <span class="panel-tour__stage">Core</span>
+              <span class="panel-tour__stage">Thermal</span>
+              <span class="panel-tour__stage">Ports</span>
             </div>
           </div>
         </div>
