@@ -901,6 +901,11 @@ section[id] {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(19, 38, 55, 0.08);
+  box-shadow: 0 12px 22px rgba(17, 43, 61, 0.06);
 }
 
 .panel-tour__meta-label {
@@ -920,8 +925,9 @@ section[id] {
 .panel-tour__viewport {
   position: relative;
   display: grid;
-  place-items: center;
+  place-items: end center;
   min-height: 26rem;
+  padding: 2.6rem 1rem 1.9rem;
   border-radius: 28px;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.8), transparent 42%),
@@ -968,7 +974,7 @@ section[id] {
 }
 
 .panel-object {
-  --panel-width: clamp(12rem, 28vw, 17rem);
+  --panel-width: clamp(11rem, 26vw, 16rem);
   --panel-height: calc(var(--panel-width) * 1.62);
   --panel-depth: 1rem;
   position: relative;
@@ -1479,6 +1485,7 @@ section[id] {
 
   .panel-tour__card-top {
     flex-direction: column;
+    gap: 0.7rem;
   }
 
   .quote-panel,
@@ -1528,12 +1535,17 @@ section[id] {
   }
 
   .panel-tour__viewport {
-    min-height: 21rem;
+    min-height: 20rem;
+    padding: 1.8rem 0.8rem 1.2rem;
   }
 
   .panel-tour__legend span,
   .panel-tour__stage {
     width: 100%;
+  }
+
+  .panel-object {
+    --panel-width: clamp(9.6rem, 46vw, 12.8rem);
   }
 }
 
