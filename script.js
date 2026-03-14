@@ -22,6 +22,7 @@ const trackedSections = navLinks
   .filter(Boolean);
 
 const shouldReduceMotion = () => prefersReducedMotion.matches;
+const isCompactViewport = () => window.innerWidth <= 760;
 
 const closeNav = () => {
   if (!siteNav || !navToggle) {
@@ -174,6 +175,7 @@ const updateSectionDepth = () => {
   }
 
   const viewportHeight = window.innerHeight || 1;
+  const nearPageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 24;
 
   revealItems.forEach((item) => {
     if (!item.classList.contains("is-visible")) {
@@ -185,6 +187,16 @@ const updateSectionDepth = () => {
     const viewportCenter = viewportHeight * 0.52;
     const depthRatio = Math.max(-1, Math.min(1, (sectionCenter - viewportCenter) / viewportHeight));
     const distance = Math.abs(depthRatio);
+
+    if (isCompactViewport() || nearPageBottom) {
+      item.style.setProperty("--section-shift", `${depthRatio * 18}px`);
+      item.style.setProperty("--section-z", "0px");
+      item.style.setProperty("--section-tilt", "0deg");
+      item.style.setProperty("--section-scale", "1");
+      item.style.setProperty("--section-opacity", "1");
+      item.style.setProperty("--section-blur", "0px");
+      return;
+    }
 
     item.style.setProperty("--section-shift", `${depthRatio * 46}px`);
     item.style.setProperty("--section-z", `${-distance * 140}px`);

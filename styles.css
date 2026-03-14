@@ -1389,6 +1389,17 @@ section[id] {
 }
 
 @media (max-width: 760px) {
+  .reveal-ready {
+    filter: blur(0);
+    transform: translateY(22px) scale(0.985);
+  }
+
+  .reveal-ready.is-visible {
+    opacity: 1;
+    filter: none;
+    transform: translateY(var(--section-shift, 0px)) scale(1);
+  }
+
   .site-header {
     border-radius: 30px;
     align-items: flex-start;
@@ -1468,6 +1479,12 @@ section[id] {
 
   .panel-tour__card-top {
     flex-direction: column;
+  }
+
+  .quote-panel,
+  .quote-form label {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: none;
   }
 }
 
